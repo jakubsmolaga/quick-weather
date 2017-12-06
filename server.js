@@ -23,11 +23,11 @@ app.get('/search', (req, res) => {
   geocode.geocodeAddress(a, (err, results)=>{
     if(err){
       console.log(err);
-      res.send('Somethin went wrong. Try refreshing the page.');
+      res.render('error.hbs');
     }else{
       weather.getWeather(results.latitude, results.longitude, (err, weatherResults)=>{
         if(err){
-          res.send('Something went wrong. Try refreshing the page.');
+          res.render('error.hbs');
         } else {
           res.render('result.hbs', {
             address: results.address,
@@ -42,6 +42,10 @@ app.get('/search', (req, res) => {
       });
     }
   });
+});
+
+app.get('/error', (req, res) => {
+  res.render('error.hbs');
 });
 
 app.listen(port, () => {

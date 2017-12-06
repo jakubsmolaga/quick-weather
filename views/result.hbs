@@ -4,15 +4,18 @@
     <meta charset="utf-8">
     <title>Results</title>
   </head>
-  <body>
-    <p><b>Adress:</b> {{address}}</p>
-    <p><b>Latitude:</b> {{latitude}}</p>
-    <p><b>Longitude:</b> {{longitude}}</p>
-    <p><b>Temperature:</b> {{temperature}} &#8451;</p>
-    <p><b>Apparent temperature:</b> {{apparentTemperature}} &#8451;</p>
-    <p><b>Wind speed:</b> {{windSpeed}} m/s</p>
-    <p><b>Summary:</b> {{summary}}</p>
-
+  <body bgcolor="#ccffff">
+    <div style="width:800px; height:350px; background-color: white; box-shadow: 2px 7px 20px; position:fixed; top:50%; left:50%; margin-top:-175px; margin-left:-400px;">
+      <div style="padding:20px; font-size:18px;">
+        <p align="center" style="font-size:20px;"><b>{{address}} ({{latitude}}, {{longitude}})</b></p>
+        <br>
+        <p>It's {{temperature}} &#8451; (but it feels like {{apparentTemperature}} &#8451;).</p>
+        <br>
+        <p>Wind blows {{windSpeed}} m/s.</p>
+        <br>
+        <p>The weather is {{summary}}.</p>
+      </div>
+    </div>
     {{> footer}}
   </body>
 </html>
