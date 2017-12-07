@@ -22,7 +22,6 @@ app.get('/search', (req, res) => {
   a = req.query['a'];
   geocode.geocodeAddress(a, (err, results)=>{
     if(err){
-      console.log(err);
       res.render('error.hbs');
     }else{
       weather.getWeather(results.latitude, results.longitude, (err, weatherResults)=>{
